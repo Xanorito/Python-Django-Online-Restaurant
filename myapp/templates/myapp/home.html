@@ -1,0 +1,611 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="{% static 'myapp/css/animate.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/style.css' %}">
+    <title>HANGUL HEAVEN</title>
+</head>
+<body>
+    <div class="container-xxl bg-white p-0" style="background-image: url({% static 'myapp/images/pic5.jpg' %});">
+        <div id="spinner" class="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <div class="container-xxl position-relative p-0">
+            {% include './navbar.html' %}
+            <div class="container-xxl py-5  hero-header mb-5">
+                <div class="container my-5 py-5">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <h1 class="display-3 text-white animated slideInLeft" style="font-style: italic;">!Annyeong Haseyo!<br>A Heritage of Flavors<br>Where Tradition Meets Taste</h1>
+                            <p class="text-white animated slideInLeft mb-4 pb-2" style="font-size: large;">Step into a world of bold flavors and culinary artistry at our place, where each dish is a symphony of seasonal ingredients and innovative technique.</p>
+                            <a href="{% url 'menu-page' %}" class="btn btn-info py-sm-3 px-sm-5 me-3 animated slideInLeft">Order Online</a>
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-end overflow-hidden">
+                            <img class="img-fluid" src="{% static 'myapp/images/Dish.png' %}" alt="" height="500" width="500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-xxl py-5" style="background-image: url({% static 'myapp/images/pexels-fotios-photos-1024359.jpg' %});">
+        <div class="container-fluid wow fadeIn" data-wow-duration="1.5s">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6 text-start">
+                            <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="{% static 'myapp/images/image2.jpg' %}">
+                        </div>
+                        <div class="col-6 text-start">
+                            <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="{% static 'myapp/images/koreanfood3.webp' %}" style="margin-top: 25%;">
+                        </div>
+                        <div class="col-6 text-end">
+                            <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="{% static 'myapp/images/top-view-stir-fried-noodles-with-vegetables-shrimps-plate-wood-table.jpg' %}">
+                        </div>
+                        <div class="col-6 text-end">
+                            <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="{% static 'myapp/images/staggered-lockdowns-.jpg' %}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
+                    <h1 class="mb-4">Welcome to 😋<i class="fa fa-utensils text-primary me-2"></i>Hangul Heaven</h1>
+                    <p class="mb-4">Hangul Heaven is Celebrating over 17 years of offering the Finest Korean and Japanese cuisine prepared by Traditional Chefs. Celebrate the taste of authenticity with us.</p>
+                    <p class="mb-4">Nestled in the heart of India at Kolkata, Hangul Heaven Restaurant offers the best of Traditional Korean cuisine and charcoal BBQ flavours. A go-to spot for absolutely Everyone. Our establishment focuses on delivering the Quintessential and Original Authentic Korean Experience.</p>
+                    <div class="row g-4 mb-4">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                                <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">10</h1>
+                                <div class="ps-4">
+                                    <p class="mb-0">Years of</p>
+                                    <h6 class="text-uppercase mb-0">Experience</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                                <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">50</h1>
+                                <div class="ps-4">
+                                    <p class="mb-0">Popular</p>
+                                    <h6 class="text-uppercase mb-0">Master Chefs</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="{% url 'about-page' %}">So, What's Cooking?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fh5co-bg-section" style="background-image: url({% static 'myapp/images/pexels-pixabay-260922.jpg' %}); background-attachment: fixed;">  
+        <div class="container">
+            <div class="row text-center" style="color:#fff ;">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="fh5co-section-lead">&nbsp;</h2>
+                </div>
+            <div class="row">          
+        </div>
+    </div>
+    <div class="container-xxl py-5">
+            <div class="container-fluid wow fadeIn" data-wow-duration="1.5s">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
+                                <h5 style="color: rgb(255, 163, 44);">Master Chefs</h5>
+                                <p style="color: rgb(0, 255, 191);">We Have Professional Head Chefs and renowned Sous Chefs to Elivate your Dining experience with Sheer Comfort and Exquisite Taste</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
+                                <h5 style="color: rgb(255, 163, 44);">Quality Food</h5>
+                                <p style="color: rgb(0, 255, 191);">Indulge in our Flavorful dishes that are Aesthetically Pleasing and maintains High Standards of Cleanliness and Food Safety</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
+                                <h5 style="color: rgb(255, 163, 44);">Online Order</h5>
+                                <p style="color: rgb(0, 255, 191);">We Ensure that all the Orders are Accurate and Prepared as requested and we also Provides Clear Estimated Delivery to make your wish come true</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-headset text-primary mb-4"></i>
+                                <h5 style="color: rgb(255, 163, 44);">24/7 Service</h5>
+                                <p style="color: rgb(0, 255, 191);">Our System Operates around the Clock ensuring to maintain the Same Level of Service and Food Quality throughout all Hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fh5co-bg-section" style="background-image: url({% static 'myapp/images/pexels-adrien-olichon-1257089-3534750.jpg' %}); background-attachment: fixed;">  
+			<div class="container">
+                <div class="row text-center" style="color:#fff ;">
+					<div class="col-md-8 col-md-offset-2">
+						<h2 class="fh5co-section-lead">&nbsp;</h2>
+					</div>
+				<div class="row">          
+            </div>
+        </div>
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
+                    <h1 class="mb-5" style="color: rgb(108, 253, 255); font-style: italic;">Most Popular Items</h1>
+                </div>
+                <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
+                                <i class="fa fa-coffee fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-white">Popular</small>
+                                    <h6 class="mt-n1 mb-0">Breakfast</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
+                                <i class="fa fa-hamburger fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-white">Special</small>
+                                    <h6 class="mt-n1 mb-0">Launch</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-3">
+                                <i class="fa fa-utensils fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-white">Lovely</small>
+                                    <h6 class="mt-n1 mb-0">Dinner</h6>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="{% static 'myapp/images/FriedChicken.jpg' %}" alt="Fried Chiecken.image" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span style="color: rgb(255, 247, 4); font-size: x-large;">KOREAN FRIED CHICKEN</span>
+                                                <span class="text-warning">300 Rs.</span>
+                                            </h5>
+                                            <small class="fst-italic text-white" style="font-size: large;">Korean Style Crispy Fried Chicken Legs</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="{% static 'myapp/images/corndog.jpg' %}" alt="CornDog.image" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span style="color: rgb(255, 247, 4); font-size: x-large;">CORNDOG</span>
+                                                <span class="text-warning">150 Rs.</span>
+                                            </h5>
+                                            <small class="fst-italic text-white" style="font-size: large;">One of the most Famous Street Food in Korea made with Flour, Cheese, Chicken Sausage, Bread Crumbs</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="{% static 'myapp/images/kimchijeon.jpg' %}" alt="Kimchi Jeon.image" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span style="color: rgb(255, 247, 4); font-size: x-large;">KIMCHI JEON</span>
+                                                <span class="text-warning">150 Rs.</span>
+                                            </h5>
+                                            <small class="fst-italic text-white" style="font-size: large;">Kimchi Pancake made with Flour, Kimchi, Onion, Spring Onion, Chilly</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="{% static 'myapp/images/porktangu.jpg' %}" alt="Pork TANGSUYUK.image" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span style="color: rgb(255, 247, 4); font-size: x-large;">PORK TANGSUYUK</span>
+                                                <span class="text-warning">380 Rs.</span>
+                                            </h5>
+                                            <small class="fst-italic text-white" style="font-size: large;">Sweet &amp Sour Korean Styled Pork Stripes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-2" class="tab-pane fade show p-0">
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="{% static 'myapp/images/Samgyeopsal.jpg' %}" alt="SAMGYEOPSAL.image" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span style="color: rgb(255, 247, 4); font-size: x-large;">SAMGYEOPSAL</span>
+                                                <span class="text-warning">2200 Rs.</span>
+                                            </h5>
+                                            <small class="fst-italic text-white" style="font-size: large;">Pork Belly(Belgium)(250g) with 2 Bowls of Rice and 13 Side Dishes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="{% static 'myapp/images/Chickenbbq.jpg' %}" alt="CHICKEN BBQ.image" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span style="color: rgb(255, 247, 4); font-size: x-large;">CHICKEN BBQ</span>
+                                                <span class="text-warning">2000 Rs.</span>
+                                            </h5>
+                                            <small class="fst-italic text-white" style="font-size: large;">Chicken Breast &amp Chicken Sausage with 2 Bowls of Rice and 13 Side Dishes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="{% static 'myapp/images/seafood.jpg' %}" alt="SEAFOOD BBQ.image" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span style="color: rgb(255, 247, 4); font-size: x-large;">SEAFOOD BBQ</span>
+                                                <span class="text-warning">3000 Rs.</span>
+                                            </h5>
+                                            <small class="fst-italic text-white" style="font-size: large;">Various Seafood with 2 Bowls of Rice and 13 Side Dishes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="{% static 'myapp/images/vegbbq.jpg' %}" alt="VEG BBQ.image" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span style="color: rgb(255, 247, 4); font-size: x-large;">VEG BBQ SET</span>
+                                                <span class="text-warning">1800 Rs.</span>
+                                            </h5>
+                                            <small class="fst-italic text-white" style="font-size: large;">Rice Zea &amp veg Dish(lime, brocoli, mushroom, zucchini, dubu etc.) with 2 Bowls of Rice and 13 Side Dishes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-3" class="tab-pane fade show p-0">
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="{% static 'myapp/images/Ramyeon.jpg' %}" alt="RAMYEON.image" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span style="color: rgb(255, 247, 4); font-size: x-large;">RAMYEON</span>
+                                                <span class="text-warning">+ [Tteok(6p) 80 Rs.]</span>
+                                                <span class="text-warning">+ [Kimchi 40 Rs.]</span>
+                                                <span class="text-warning">350 Rs.</span>
+                                            </h5>
+                                            <small class="fst-italic text-white" style="font-size: large;">Korean Style Spicy Noodles with Vegetables</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="{% static 'myapp/images/bibimbap.jpg' %}" alt="BIBIMBAP.image" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span style="color: rgb(255, 247, 4); font-size: x-large;">BIBIMBAP</span>
+                                                <span class="text-warning">+ [Chicken 60 Rs.]</span>
+                                                <span class="text-warning">450 Rs.</span>
+                                            </h5>
+                                            <small class="fst-italic text-white" style="font-size: large;">Assortments of Various Vegetables and Egg to enjoy from one Bowl</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="{% static 'myapp/images/Manduguk.jpg' %}" alt="MANDUGUK.image" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span style="color: rgb(255, 247, 4); font-size: x-large;">MANDUGUK</span>
+                                                <span class="text-warning">400 Rs.</span>
+                                            </h5>
+                                            <small class="fst-italic text-white" style="font-size: large;">Korean Traditional Dumplings Soup of Chicken Mandu(Korean Dumplings), Spring Onion, Mushroom, Egg, Chilly</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="{% static 'myapp/images/Ttaekbokki1.jpg' %}" alt="TTEOKBOKKI.image" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span style="color: rgb(255, 247, 4); font-size: x-large;">TTEOKBOKKI</span>
+                                                <span class="text-warning">+ [Cheese 30 Rs.]</span>
+                                                <span class="text-warning">+ [Eomuk 100 Rs.]</span>
+                                                <span class="text-warning">500 Rs.</span>
+                                            </h5>
+                                            <small class="fst-italic text-white" style="font-size: large;">One of the most Famous Korean Street Food containing Tteok, Onion, Carrot, Spring Onion, Chilly, Sweet Corn</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <div class="video">
+                        <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/watch?v=oDNhgKgmzwQ" data-bs-target="#videoModal">
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6 bg-dark d-flex align-items-center">
+                    <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Reservation</h5>
+                        <h1 class="text-white mb-4">Book A Table</h1>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating time" id="time3" data-target-input="nearest">
+                                        <input type="time" id="booktable" class="form-control form-control-lg custom-form-control" placeholder="EMAIL">
+                                        <label for="datetime">Time</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating date" id="date3" data-target-input="nearest">
+                                        <input type="date" id="booktable" class="form-control form-control-lg custom-form-control" placeholder="12/12/12">
+                                        <label for="datetime">Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="select1">
+                                          <option value="1">1 Person</option>
+                                          <option value="2">2 Persons</option>
+                                          <option value="3">3 Persons</option>
+                                          <option value="4">4 Persons</option>
+                                          <option value="5">5 Persons</option>
+                                          <option value="6">6 Persons</option>
+                                          <option value="7">7 Persons</option>
+                                          <option value="8">8 Persons</option>
+                                          <option value="9">9 Persons</option>
+                                          <option value="10">10 Persons</option>
+                                        </select>
+                                        <label for="select1">No Of People</label>
+                                      </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                        <label for="message">Special Requests for Your Special-One's</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 16:9 aspect ratio -->
+                        <div class="ratio ratio-16x9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/watch?v=oDNhgKgmzwQ" id="video" allowfullscreen allowscriptaccess="always"
+                                allow="autoplay"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="container-xxl pt-5 pb-3">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Team Members</h5>
+                    <h1 class="mb-5" style="color: coral; font-style: italic;">Our Master Chefs</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="{% static 'myapp/images/sunkimm.jpg' %}" alt="Sun kim.image">
+                            </div>
+                            <h5 class="mb-0" style="color: aqua;">Sun Kim</h5>
+                            <small class="fst-italic text-white" style="font-size: large;">Head Chef</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="{% static 'myapp/images/baek-jong-wonn.png' %}" alt="Baek Jong Won.image">
+                            </div>
+                            <h5 class="mb-0" style="color: aqua;">Baek Jong Won</h5>
+                            <small class="fst-italic text-white" style="font-size: large;">Head Chef</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="{% static 'myapp/images/cho-hee-sookk.jpeg' %}" alt="Cho Hee Sook.image">
+                            </div>
+                            <h5 class="mb-0" style="color: aqua;">Cho Hee Sook</h5>
+                            <small class="fst-italic text-white" style="font-size: large;">Head Chef</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="{% static 'myapp/images/hee-eun-kiim.jpg' %}" alt="Hee-Eun-Kim.image">
+                            </div>
+                            <h5 class="mb-0" style="color: aqua;">Hee-Eun-Kim</h5>
+                            <small class="fst-italic text-white" style="font-size: large;">Head Chef</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;" id="testimonial">
+            <div class="container" style="background-color: rgb(7, 110, 133);">
+                <div class="text-center">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Testimonial</h5>
+                    <h1 class="mb-5" style="color: rgb(41, 248, 0); font-style: italic;">Our Clients Say!!!</h1>
+                </div>
+                <div class="row mt-3 mb-5">
+                    <div class="col-md-4 my-3 my-md-0" style="background-image: url({% static 'myapp/images/Korean-Food.avif' %});">
+                        <div class="testmonial-card">
+                            <h3 class="testmonial-title" style="color: rgb(21, 228, 255);">John Doe</h3>
+                            <h6 class="testmonial-subtitle" style="color: rgb(255, 205, 4);">Renowned Chef</h6>
+                            <div class="testmonial-body">
+                                <p style="color: rgb(255, 255, 255);">Absolutely high quality meat paired with house-made side dishes and soups that remind of home. Love the new renovation and the clean, smoke-free experience. Friendly staff. Korean approved!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-3 my-md-0" style="background-image: url({% static 'myapp/images/Ttaekbokki.jpg' %});">
+                        <div class="testmonial-card">
+                            <h3 class="testmonial-title" style="color: rgb(21, 228, 255);">Steve Thomas</h3>
+                            <h6 class="testmonial-subtitle" style="color: rgb(255, 205, 4);">Food Critic</h6>
+                            <div class="testmonial-body">
+                                <p style="color: rgb(255, 255, 255);">From the quality of the meat to the attention to detail in the marinades, every aspect of the meal was superb. Highly recommended for anyone craving delicious KBBQ in a welcoming environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-3 my-md-0" style="background-image: url({% static 'myapp/images/Ttaekbokki1.jpg' %});">
+                        <div class="testmonial-card">
+                            <h3 class="testmonial-title" style="color: rgb(21, 228, 255);">Miranda Joy</h3>
+                            <h6 class="testmonial-subtitle" style="color: rgb(255, 205, 4);">Famous Sous Chef</h6>
+                            <div class="testmonial-body">
+                                <p style="color: rgb(255, 255, 255);">A taste of home, away from home. This newly renovated restaurant promises authentic Korean food. Will definitely come again.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 has-height-md text-center wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
+                        <a class="btn btn-link" href="{% url 'about-page' %}">About Us</a>
+                        <a class="btn btn-link" href="{% url 'contact-page' %}">Contact Us</a>
+                        <a class="btn btn-link" href="{% url 'booking-page' %}">Reservation</a>
+                        <a class="btn btn-link" href="#">Privacy Policy</a>
+                        <a class="btn btn-link" href="#">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Park Center Building, 5th Floor, 24th Park Street, West Bengal, Kolkata 700016</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8433980741</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9858317846</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>Hangul24@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
+                        <h5 class="text-light fw-normal">Monday - Saturday</h5>
+                        <p>09AM - 11PM</p>
+                        <h5 class="text-light fw-normal">Sunday</h5>
+                        <p>10AM - 11PM</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
+                        <p>Explore the Journey of Authenticity &amp Embark Yourself with the Correct Knowledge! Subscribe to Our Newsletter</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">I'M IN!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Hangul Heaven</a>,2024, All Right Reserved. 
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="{% url 'home-page' %}">Home</a>
+                                <a href="#">Cookies</a>
+                                <a href="#">Help</a>
+                                <a href="#">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'myapp/js/main.js' %}"></script>
+</body>
+</html>

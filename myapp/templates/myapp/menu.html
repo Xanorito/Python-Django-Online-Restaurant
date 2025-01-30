@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="{% static 'myapp/css/animate.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/style1.css' %}">
+    <style>
+		/* Add CSS styles for flex container and items */
+		.product-list {
+			display: flex;
+			flex-wrap: wrap; /* Allow items to wrap to the next row if necessary */
+			justify-content: space-between; /* Space items evenly along the main axis */
+			list-style: none; /* Remove list styles */
+			padding: 0;
+		}
+
+		.product-item {
+			flex: 1; /* Grow to fill available space evenly */
+			max-width: 30%; /* Limit item width to avoid overcrowding */
+			margin: 10px; /* Add spacing between items */
+			border: 1px solid #ccc; /* Add a border for visual separation */
+			padding: 10px;
+			text-align: center;
+		}
+
+		/* Style the "Buy Now" button */
+		.buy-now-button {
+			display: block;
+			margin-top: 10px;
+			background-color: #007bff;
+			color: #fff;
+			text-decoration: none;
+			padding: 5px 10px;
+			border-radius: 5px;
+		}
+	</style>
+    <title>MENU</title>
+</head>
+<body>
+    <div class="container-xxl bg-white p-0" style="background-image: url({% static 'myapp/images/pic8.jpg' %});">
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            {% include './navbar.html' %}
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown" style=" font-style: italic;  font-weight: bold;">Food Menu</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="{% url 'home-page' %}">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Menu</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <div class="container-fluid">
+            <ul class=" product-list nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+                <li class="product-item nav-item">
+                    <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" href="/menu">
+                        <i class="fa fa-list fa-2x text-primary"></i>
+                        <div class="ps-3">
+                            <h6 class="mt-n1 mb-0">All</h6>
+                            <h6 class="mt-n1 mb-0">Items</h6>
+                        </div>
+                    </a>
+                </li>
+                &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160
+                {% for cat in allcate %}
+                <li class="product-item nav-item">
+                    <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3" href="/category/{{cat.cat_id}}">
+                        <i class="fa fa-rainbow fa-2x text-warning"></i>
+                        <div class="ps-3">
+                            <h6 class="mt-n1 mb-0">{{cat.cat_name}}</h6>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="row">
+                {% if allitem %}
+                {% for item in allitem %}
+                <div class="card col-4" style="background-color: rgb(255, 189, 237);">
+                    <a href="/details/{{item.i_id}}"><img src="{{item.image.url}}" width="400" height="400" class="card-img-top"></a>
+                    <div class="card-header">
+                        <h4 class="card-title" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: rgb(0, 70, 132);">{{item.name}}</h4>
+                    </div>    
+                    <div class="card-footer">   
+                        <h4 class="card-text text-justify" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: rgb(134, 1, 116);">&#8377;{{item.price}}</h4>
+                    </div>
+                    <a class="buy-now-button" href="/add/{{item.i_id}}">Add to Cart</a>
+                </div>
+                {% endfor %}
+                {% else %}
+                    <h2 style="color: rgb(0, 39, 112); font-family: 'Times New Roman', Times, serif; font-weight: bold; font-style: italic; font-size: xx-large;" align="Center">Sorry No Item Found</h2>
+                {% endif %}
+            </div>
+        </div>
+
+
+        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 has-height-md text-center wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
+                        <a class="btn btn-link" href="{% url 'about-page' %}">About Us</a>
+                        <a class="btn btn-link" href="{% url 'contact-page' %}">Contact Us</a>
+                        <a class="btn btn-link" href="{% url 'booking-page' %}">Reservation</a>
+                        <a class="btn btn-link" href="#">Privacy Policy</a>
+                        <a class="btn btn-link" href="#">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Park Center Building, 5th Floor, 24th Park Street, West Bengal, Kolkata 700016</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8433980741</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9858317846</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>Hangul24@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
+                        <h5 class="text-light fw-normal">Monday - Saturday</h5>
+                        <p>09AM - 11PM</p>
+                        <h5 class="text-light fw-normal">Sunday</h5>
+                        <p>10AM - 11PM</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
+                        <p>Explore the Journey of Authenticity &amp Embark Yourself with the Correct Knowledge! Subscribe to Our Newsletter</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">I'M IN!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Hangul Heaven</a>,2024, All Right Reserved.
+                        </div> 
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="{% url 'home-page' %}">Home</a>
+                                <a href="#">Cookies</a>
+                                <a href="#">Help</a>
+                                <a href="#">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'myapp/js/main.js' %}"></script>
+</body>
+</html>
